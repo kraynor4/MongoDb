@@ -1,6 +1,9 @@
 html, body {
     font-size: 10px;
     font-family: Tahoma, Arial;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 nav {
@@ -15,18 +18,17 @@ nav ul,
 nav ul li {
     margin: 0;
     padding: 0;
-   list-style: none;
-   display: inline-block;
+    list-style: none;
+    display: inline-block;
 }
 
 nav ul li a {
     display: block;
-    padding:  0 20px;
+    padding: 0 20px;
     line-height: 44px;
     font-size: 1.4rem;
     text-decoration: none;
     color: white;
-    margin: 0;
 }
 
 nav ul li a:hover {
@@ -62,20 +64,37 @@ header h2 {
 
 main {
     padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 main article {
     display: inline-block;
     width: 100%;
-    max-width: 340px;
+    max-width: 600px; /* Increase max-width for articles */
     text-align: justify;
-    margin: 0;
-}   
+    margin: 20px 0;
+}
+
+/* Increase space below Chart 1 for Chart 2 */
+/* main article:nth-child(2) {
+    margin-top: 50px; 
+} */
+
+/* Style for the chart containers */
+
+
+/* Ensure the charts take up full width */
+canvas, svg {
+    max-width: 100%;
+    height: auto !important;
+}
 
 footer {
     background-color: #b4c6f0;
     padding: 40px;
-    height: 200px;
+    text-align: center;
     font-size: 1.4em;
 }
 
@@ -91,5 +110,9 @@ footer {
     main article {
         margin: 10px;
     }
-    
+
+    /* Allow charts to be full width on larger screens */
+    .chart-container {
+        max-width: 600px;
+    }
 }
